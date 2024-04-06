@@ -14,6 +14,10 @@ let divide = (number1, number2) => Math.round((number1 / number2) * 100) / 100;
 function calculate(number1, number2, sign) {
   number1 = parseFloat(number1);
   number2 = parseFloat(number2);
+  if (isNaN(number1) || isNaN(number2)) {
+    alert("Invalid number");
+    return 0;
+  }
   switch (sign) {
     case "+":
       return add(number1, number2);
@@ -65,7 +69,6 @@ function handleOperatorInput(operatorInput) {
 }
 
 function handleEqualInput() {
-  console.log(digit1, operator, digit2);
   if (digit1 !== null && digit2 !== null && operator !== null) {
     result = calculate(digit1, digit2, operator);
   } else if (digit1 !== null) {
@@ -127,6 +130,8 @@ function handleMinusInput() {
   } else if (digit2 === null && operator !== null) {
     digit2 = "-";
     printOnDisplay(digit2);
+  } else if (digit1 === "-" || digit2 === "-") {
+    return;
   } else {
     handleOperatorInput("-");
   }
