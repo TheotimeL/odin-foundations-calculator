@@ -1,0 +1,88 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    color:rgb(93, 35, 4);
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: antiquewhite;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 500px;
+    padding: 2px;
+    background-color: rgb(32, 32, 32);
+    border: 10px solid rgb(123, 80, 0);
+}
+
+
+.display {
+    display: flex;
+    flex: 1;
+    width: 91%;
+    background-color: rgb(96, 96, 96);
+    color: white;
+    font-size: 2em;
+    padding: 10px;
+    margin: 6px;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 80px;
+    font-weight: bold;
+    color:rgb(255, 255, 255)
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex: 0 0 75%;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+}
+
+.btn-row {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.double-calc-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+    margin: 2px;
+    padding: 4px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.calc-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin: 2px;
+    padding: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.symbol-style {
+    background-color: #e2dad8;
+}
+
+.spec-style {
+    background-color: #c2bfbe;
+}
