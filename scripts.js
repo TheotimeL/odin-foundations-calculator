@@ -40,8 +40,7 @@ function handleDigitInput(digit) {
     digit1 = digit;
     printOnDisplay(digit1);
   } else if (operator === null) {
-    currentDisplay = getDisplayValue();
-    digit1 = currentDisplay + digit;
+    digit1 = digit1 + digit;
     printOnDisplay(digit1);
   } else if (digit2 === null) {
     console.log("digit2", digit2);
@@ -58,9 +57,10 @@ function handleDigitInput(digit) {
 function handleOperatorInput(operatorInput) {
   if (digit1 !== null && digit2 !== null && operator !== null) {
     result = handleEqualInput();
+    digit1 = result;
     operator = operatorInput;
   } else if (digit1 === null) {
-    digit1 = 0;
+    digit1 = parseFloat(getDisplayValue()) != null ? getDisplayValue() : "0";
     operator = operatorInput;
   } else {
     operator = operatorInput;
@@ -76,7 +76,7 @@ function handleEqualInput() {
   } else {
     alert("Invalid operation");
   }
-  resetOperation(result);
+  resetOperation();
   printOnDisplay(result);
   return result;
 }
